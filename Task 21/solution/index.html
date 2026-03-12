@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(163, 35, 163);
+        }
+        .container .input{
+            display: inline-block;
+            background-color: white;
+            width: 30%;
+            margin: 20px;
+            padding: 10px;
+            border-radius: 15px;
+        }
+        .container .input p{
+            font-size: 20px;
+        }
+        .container .input form input:first-child{
+            margin-right: 20px;
+        }
+        .task-box {
+            background-color: lightgray;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .task-box:hover {
+            background-color: gray;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        .spancount {
+            margin-left: 130px;
+            color: white;
+            background-color: purple;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        select{
+            background-color: whitesmoke;
+            border: 1px solid white;
+            color:black
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input">
+            <p style="font-size: 20px;font-weight: bold;">Tasks board</p>
+            <form action="">
+                <input type="text" name="text" id="task">
+                <input type="submit" value="submit" class="submit">
+            </form>
+             <div class="tasks"></div>
+        </div>
+    </div>
+    <script>
+        let names = prompt("Enter the names");
+        if(names.length === 0){
+            throw new Error("names must not be empty");
+        }
+        //console.log(names.split(","));
+        container = document.querySelector(".container");
+        namesarr = names.split(",");
+        namesarr.forEach(n => {
+            const dropArea = document.createElement("div");
+            dropArea.className = "dropArea";
+            dropArea.style.cssText = `
+                background-color:white;
+                display:inline-block;
+                margin:30px;
+                width:280px;
+                min-height:100px;
+                border-radius:20px;
+            `;
+            const info = document.createElement("div");
+            info.className = "info";
+            info.style.marginTop = "10px";
+            const spanName = document.createElement("span");
+            spanName.textContent = n;
+            spanName.style.cssText = "font-size:20px;padding:20px;font-weight:bold";
+            const spanCount = document.createElement("span");
+            spanCount.className = "spancount";
+            spanCount.style.cssText = "margin-left:130px;color:white;background-color:purple;padding:10px 15px;margin-top:10px;border-radius:50%";
+            const p = document.createElement("p");
+            info.append(spanName, spanCount, p);
+            dropArea.appendChild(info);
+            container.appendChild(dropArea);
+        });
+        inputdiv = document.querySelector(".input");
+        task = document.querySelector("#task");
+        task.style.cssText = `
+            border:1px solid gray;
+            border-radius:15px;
+            padding:10px
+            width:200px;
+            height:30px
+        `;
+        submit = document.querySelector(".submit");
+        submit.style.cssText = `
+            border:none;
+            background-color:orange;
+            color:white;
+            border-radius:15px;
+            padding:10px
+        `;
+        const tasksContainer = document.querySelector(".tasks");
+        let count = 0;
+        submit.addEventListener("click",function(e){
+            e.preventDefault();
+            const newTask = document.createElement("div");
+            newTask.classList.add(`task-box`);
+            newTask.id = `task-${count}`;
+            newTask.textContent = task.value;
+            newTask.style.cssText = `
+                // background-color:lightgray;
+                // padding:20px;
+                // margin:20px;
+                // border-radius:15px;
+                font-size:20px;
+                font-weight:50px;
+                color:white;
+            `
+            newTask.draggable = true;
+            newTask.addEventListener("dragstart",function(e){
+                inputdiv.style.cssText = `background-color:lightblue`;
+                e.dataTransfer.setData("task",e.target.id)
+            })
+            newTask.addEventListener("dragend",function(e){
+                inputdiv.style.cssText = `background-color:white`;
+            })
+            tasksContainer.appendChild(newTask);
+            count++;
+        })
+        spancount = document.querySelector(".spancount");
+        spancount.style.cssText=`margin-left:100px`;
+        const dropAreas = document.querySelectorAll(".dropArea")
+        dropAreas.forEach(mon => {
+            let c=0;
+            mon.addEventListener("dragenter",function(e){
+                this.style.backgroundColor="lightgreen"
+                // c++
+                // mon.querySelector(".spancount").textContent = c;
+            })
+            mon.addEventListener("dragover",function(e){
+                e.preventDefault()  
+            })
+            mon.addEventListener("dragleave",function(e){
+                e.preventDefault()  
+                // this.style.backgroundColor="white"
+                // if(c > 0){
+                //     c--;
+                // }
+                // mon.querySelector(".spancount").textContent = c;
+                // select1.style.cssText = `display:none`;
+
+            })
+            mon.addEventListener("drop",function(e){
+                e.preventDefault()  
+                this.style.backgroundColor="white";
+                const taskid=e.dataTransfer.getData("task")
+                const task = document.getElementById(taskid);
+                task.style.backgroundColor = `red`;
+                if(!task.querySelector("select")){
+                    option0 = document.createElement("option");
+                    option0.value = "Not Finished";
+                    option0.textContent = "Not Finished";
+                    option1 = document.createElement("option");
+                    option1.value = "Not Finished";
+                    option1.textContent = "Not Finished";
+                    option2 = document.createElement("option");
+                    option2.value = "Pending";
+                    option2.textContent = "Pending";
+                    option3 = document.createElement("option");
+                    option3.value = "Finished";
+                    option3.textContent = "Finished";
+                    select1 = document.createElement("select");
+                    select1.appendChild(option0);
+                    select1.appendChild(option1);
+                    select1.appendChild(option2);
+                    select1.appendChild(option3);
+                    //select1.id = "selecttasks";
+                    select1.style.cssText = `margin-left:50px`;
+                    task.appendChild(select1);
+                    //selecttasks = document.getElementById("selecttasks");
+                    select1.addEventListener("change",function(e){
+                        // task = document.getElementById(taskid);
+                        // task.style.backgroundColor = `red`;
+                        if(e.target.value === "Not Finished"){
+                            task.style.backgroundColor = `red`;
+                        }
+                        else if(e.target.value === "Finished"){
+                            task.style.backgroundColor = `green`;
+                        }
+                        if(e.target.value === "Pending"){
+                            task.style.backgroundColor = `blue`;
+                        }
+                    })
+                }
+                this.appendChild(document.getElementById(taskid));
+                c++;
+                mon.querySelector(".spancount").textContent = c;;
+                
+            })
+        })
+    </script>
+</body>
+</html>

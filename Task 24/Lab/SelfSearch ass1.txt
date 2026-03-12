@@ -1,0 +1,6 @@
+Methods For Form APi
+
+checkValidity()
+reportValidity()
+setCustomValidity()
+

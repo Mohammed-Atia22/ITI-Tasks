@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        form{
+            margin-top: 40px;
+            background-color: lightgray;
+            padding: 20px 50px;
+            /* width: 300px; */
+            border-radius: 20px;
+        }
+        form p{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        form input{
+            text-align: center;
+            display: block;
+            margin-bottom: 20px;
+            width: 200px;
+            height: 35px;
+            border-radius: 15px;
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+        #submit{
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+        }
+        input:focus{
+            border: 2px solid green;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="">
+        <p>Registration Form</p>
+        <input type="text" name="name" id="name" placeholder="Name">
+        <input type="email" name="email" id="email" placeholder="Email">
+        <input type="password" name="password" id="password" placeholder="Password">
+        <input type="number" name="age" id="age" placeholder="Age" >
+        <input type="submit" value="submit" id="submit">
+    </form>
+    <script src="./app1.js"></script>
+</body>
+</html>

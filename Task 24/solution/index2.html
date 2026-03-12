@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lightgray;
+        }
+        form{
+            text-align: center;
+            margin-top: 40px;
+            background-color: cyan;
+            padding: 30px;
+            width: 350px;
+            margin-left: 450px;
+            border-radius: 15px;
+        }
+        form p{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        form input{
+            text-align: center;
+            /* display: block; */
+            margin-bottom: 20px;
+            width: 200px;
+            height: 35px;
+            border-radius: 15px;
+            border:none;
+            outline: none;
+            box-shadow: none;
+        }
+        #submit{
+            background-color: white;
+            color: cyan;
+            font-size: 20px;
+            transition: 0.4s ease ;
+        }
+        input:focus{
+            border: 2px solid green;
+        }
+        form input[type="submit"]:hover {
+            background-color: rgb(21, 21, 82) !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <p>Weather App</p>
+        <input type="text" name="country" id="country">
+        <input type="submit" value="submit" id="submit">
+        <div class="result"></div>
+    </form>
+    
+    <script src="./app2.js"></script>
+</body>
+</html>

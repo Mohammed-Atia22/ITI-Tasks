@@ -1,0 +1,23 @@
+@use "./variables" as *;
+
+%button-base{
+    color: $secondaryColor;
+    padding: $spaceUnit;
+    border-radius: $borderRadius;
+    width: 150px;
+    height: 50px;
+}
+
+%circle{
+    border-radius: 50%;
+}
+
+%card-base{
+    // width: 400px;
+    height: 400px;
+    background-color: $primaryColor;
+    color: $lightColor;
+    font: bold 220 verdana;
+    // display: inline;
+    margin: 10px;
+}

@@ -1,0 +1,60 @@
+@use "./variables" as *;
+
+@for $i from 1 through $gridColumns{
+    .col-#{$i}{
+        width: calc(100%/$gridColumns)*$i;
+    }
+}
+
+@for $i from 1 through 5{
+    .mt-#{$i}{
+        margin-top: 5px*$i;
+    }
+}
+@for $i from 1 through 5{
+    .mb-#{$i}{
+        margin-top: 5px*$i;
+    }
+}
+@for $i from 1 through 5{
+    .mr-#{$i}{
+        margin-top: 5px*$i;
+    }
+}
+@for $i from 1 through 5{
+    .ml-#{$i}{
+        margin-top: 5px*$i;
+    }
+}
+
+$colors:(1:red,2:green,3:blue,4:orange,5:darkcyan);
+
+@each $key,$value in $colors{
+    .bg-#{$key}{
+        background-color: $value;
+    }
+    .text-#{$key}{
+        color: $value;
+    }
+}
+
+$border:(primary:black,secondary:rgb(25, 23, 68),success:green,danger:red);
+@each $key,$value in $border{
+    .border-#{$key}{
+        border-color: $value;
+    }
+}
+
+@mixin flex-center(){
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+@mixin border-color($color){
+    border-color: $color;
+}
+
+@mixin box-shadow($x,$y,$z,$color){
+    box-shadow: $x $y $z $color;
+}

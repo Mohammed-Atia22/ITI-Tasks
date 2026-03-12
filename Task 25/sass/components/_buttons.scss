@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/extends" as *;
+
+.primarybtn{
+    @extend %button-base;
+    background-color: $primaryColor;
+}
+.secondarybtn{
+    @extend %button-base;
+    background-color: $secondaryColor;
+}
+.dangerbtn{
+    @extend %button-base;
+    background-color: $dangerColor;
+}
+.circle{
+    @extend %circle;
+}

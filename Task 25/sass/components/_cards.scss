@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/extends" as *;
+
+.card{
+    @extend %card-base;
+    border-radius: $borderRadius;
+    padding: $spaceUnit;
+    &:hover{
+        @include box-shadow(5px,5px,5px,darkcyan);
+    }
+    @include flex-center;
+}

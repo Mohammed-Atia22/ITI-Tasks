@@ -1,0 +1,270 @@
+.col-1 {
+  width: 8.3333333333%;
+}
+
+.col-2 {
+  width: 16.6666666667%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.3333333333%;
+}
+
+.col-5 {
+  width: 41.6666666667%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.3333333333%;
+}
+
+.col-8 {
+  width: 66.6666666667%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.3333333333%;
+}
+
+.col-11 {
+  width: 91.6666666667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.mt-1 {
+  margin-top: 5px;
+}
+
+.mt-2 {
+  margin-top: 10px;
+}
+
+.mt-3 {
+  margin-top: 15px;
+}
+
+.mt-4 {
+  margin-top: 20px;
+}
+
+.mt-5 {
+  margin-top: 25px;
+}
+
+.mb-1 {
+  margin-top: 5px;
+}
+
+.mb-2 {
+  margin-top: 10px;
+}
+
+.mb-3 {
+  margin-top: 15px;
+}
+
+.mb-4 {
+  margin-top: 20px;
+}
+
+.mb-5 {
+  margin-top: 25px;
+}
+
+.mr-1 {
+  margin-top: 5px;
+}
+
+.mr-2 {
+  margin-top: 10px;
+}
+
+.mr-3 {
+  margin-top: 15px;
+}
+
+.mr-4 {
+  margin-top: 20px;
+}
+
+.mr-5 {
+  margin-top: 25px;
+}
+
+.ml-1 {
+  margin-top: 5px;
+}
+
+.ml-2 {
+  margin-top: 10px;
+}
+
+.ml-3 {
+  margin-top: 15px;
+}
+
+.ml-4 {
+  margin-top: 20px;
+}
+
+.ml-5 {
+  margin-top: 25px;
+}
+
+.bg-1 {
+  background-color: red;
+}
+
+.text-1 {
+  color: red;
+}
+
+.bg-2 {
+  background-color: green;
+}
+
+.text-2 {
+  color: green;
+}
+
+.bg-3 {
+  background-color: blue;
+}
+
+.text-3 {
+  color: blue;
+}
+
+.bg-4 {
+  background-color: orange;
+}
+
+.text-4 {
+  color: orange;
+}
+
+.bg-5 {
+  background-color: darkcyan;
+}
+
+.text-5 {
+  color: darkcyan;
+}
+
+.border-primary {
+  border-color: black;
+}
+
+.border-secondary {
+  border-color: rgb(25, 23, 68);
+}
+
+.border-success {
+  border-color: green;
+}
+
+.border-danger {
+  border-color: red;
+}
+
+.primarybtn, .secondarybtn, .dangerbtn {
+  color: rgb(16, 11, 110);
+  padding: 10px;
+  border-radius: 20px;
+  width: 150px;
+  height: 50px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.card {
+  height: 400px;
+  background-color: rgb(16, 20, 48);
+  color: lightblue;
+  font: bold 220 verdana;
+  margin: 10px;
+}
+
+.primarybtn {
+  background-color: rgb(16, 20, 48);
+}
+
+.secondarybtn {
+  background-color: rgb(16, 11, 110);
+}
+
+.dangerbtn {
+  background-color: red;
+}
+
+.card {
+  border-radius: 20px;
+  padding: 10px;
+}
+.card:hover {
+  box-shadow: 5px 5px 5px darkcyan;
+}
+.card {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+nav {
+  background-color: rgb(16, 11, 110);
+  color: lightblue;
+  padding: 10px;
+  border: 1px solid rgb(16, 20, 48);
+  margin: 0;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  margin: 10px;
+}
+nav ul li:hover {
+  color: red;
+  cursor: pointer;
+}
+
+footer {
+  background-color: lightblue;
+  color: rgb(16, 20, 48);
+  padding: 10px;
+  border: 1px solid rgb(16, 20, 48);
+  margin: 0;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+footer ul li {
+  display: inline-block;
+  margin: 10px;
+}
+footer ul li:hover {
+  color: red;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */
