@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        function Car(name,speed){
+            this.name = name;
+            this.speed = speed;
+        }
+        function EV(charge,name,speed){
+            Car.call(this,name,speed);
+            this.charge = charge;
+        }
+        EV.prototype = Object.create(Car.prototype);
+        EV.prototype.constructor = EV;
+
+        EV.prototype.chargeBattery = function(chargeTo){
+            this.charge = chargeTo;
+        }
+
+        EV.prototype.accelerate = function(){
+            this.speed = this.speed+20;
+            this.charge = this.charge-1;
+            console.log(`Tesla going at ${this.speed} km/h,with charge of ${this.charge}%`)
+        }
+
+        //var car1 = new Car("BMW",120);
+        var car2 = new EV(90,'bmw',120);
+    </script>
+</body>
+</html>

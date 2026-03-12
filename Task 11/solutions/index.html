@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        function Shape(color){
+            this.color = color;
+        }
+
+        Shape.prototype.PrintColor = function(){return 0}
+        Shape.prototype.CalcArea = function(){return 0}
+        Shape.prototype.CalcPerimeter = function(){return 0}
+
+        function Rect(width,height,color){
+            this.width = width;
+            this.height = height;
+            Shape.call(this,color)
+            Rect.NumberOfCreateStudent++;
+        }
+        Rect.prototype = Object.create(Shape.prototype);
+        Rect.prototype.constructor = Rect;
+        Rect.NumberOfCreateStudent = 0;//*Bind Static Memebr inside Rect
+        Rect.returnStudentsNumbers = function () {
+        console.log("# Studets :", Rect.NumberOfCreateStudent);
+}
+
+        function Square(width){
+            Rect.call(this,width,width);
+        }
+        Square.prototype = Object.create(Rect.prototype);
+        Square.prototype.constructor = Square;
+
+        Square.prototype.CalcArea = function(width,height){
+            return width*height
+        }
+        Square.prototype.CalcPerimeter = function(width,height){
+            return 2*width*height
+        }
+        Square.prototype.PrintColor = function(color){
+            return color;
+        }
+        // Square.prototype.toString = function(){
+        //     return this.color;
+        // }
+
+        var res1 = new Square(20,20);
+
+        Rect.returnStudentsNumbers();
+        var Std2 = new Rect()
+        var Std2 = new Rect()
+        var Std2 = new Rect()
+        Rect.returnStudentsNumbers();
+
+
+    </script>
+</body>
+</html>

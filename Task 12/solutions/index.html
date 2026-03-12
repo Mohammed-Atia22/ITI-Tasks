@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        let arr = [10,50,30,70,40,90,35];
+        // arr.sort(function(a,b){
+        //     return a-b;
+        // })
+        arr.sort((a,b)=>{
+            return a-b;
+        })
+        // let res = arr.filter(function(num){
+        //     if(num>50){
+        //         return num;
+        //     }
+        // })
+        let res = arr.filter((num)=>{
+            if(num>50){
+                return num;
+            }
+        })
+        //////////////////////////////////////////////////////////
+        function fun(one,...two){
+            if(one=="sum"){
+                let sum=0;
+                for(let i=0;i<two.length;i++){
+                    sum += two[i];
+                }
+                console.log(sum);
+            }
+            else if(one=="minus"){
+                let min = eval(two.join("-"));
+                console.log(min);
+                // let st = two[0] - two[1];
+                // let min=0;
+                // for(let i=0;i<two.length/2;i++){
+                //     sum1 += two[i];
+                // }
+                // let sum2=0
+                // for(let i=two.length/2;i<two.length;i++){
+                //     sum2 += two[i];
+                // }
+                // console.log(sum1-sum2);
+            }
+            else if(one=="multi"){
+                let multi=1;
+                for(let i=0;i<two.length;i++){
+                    multi = multi*two[i] ;
+                }
+                console.log(multi);
+            }
+            else if(one=="div"){
+                let div=0;
+                for(let i=0;i<two.length;i++){
+                    div += two[i];
+                }
+                console.log(div/two.length);
+            }
+        }
+        fun("sum",1,2,3,4,5,6);
+        fun("minus",1,2,3,4,5,6);
+        fun("multi",1,2,3);
+        fun("div",1,2,3,56,7);
+        /////////////////////////////////////////////////////////////
+        let projectFun = (projectId,projectName,duration,printDate) => {
+        let projectObject = {
+            projectId,
+            projectName,
+            duration,
+            printDate:printDate
+        }
+        return projectObject;
+    }
+
+    let projectFun5 = projectFun(1010, "Web app", 22,function(){
+
+    });
+    console.log(projectFun5);
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        function Math5(nums){
+            //this.fun = fun;
+            this.nums = nums;
+        }
+        Math5.prototype.sum = function(){
+            if(nums.length!=0){
+                let sum = 0;
+                for(let i=0;i<nums.length;i++){
+                    sum += nums[i];
+                }
+                return sum ;
+            }
+            else{
+                console.log("the array is empty");
+            }
+        }
+        Math5.prototype.multiply = function(){
+            if(nums.length!=0 && !nums.includes(0)){
+                let mul = 1;
+                for(let i=0;i<nums.length;i++){
+                    mul *= nums[i];
+                }
+                return mul;
+            }
+            else{
+                console.log("the array is empty or the array has value zero");
+            }
+        }
+        Math5.prototype.division = function(chargeTo){
+            if(nums.length!=0 && !nums.includes(0)){
+                let div = nums.reduce((acc, curr) => acc / curr);
+                return div;
+            }
+            else{
+                console.log("the array is empty or the array has value zero");
+            }
+        }
+        Math5.prototype.minus = function(){
+            if(nums.length!=0){
+                //let min = eval(nums.join("-"));
+                let min = nums.reduce((acc, curr) => acc - curr);
+                return min;
+            }
+            else{
+                console.log("the array is empty");
+            }
+        }
+        Math5.sumS = function(...arr){
+            if(nums.length!=0){
+                    let staticSum = arr.reduce((acc, curr) => acc + curr);
+                    return staticSum;
+
+            }
+            else{
+                console.log("the array is empty");
+            }
+        }
+
+        //var car1 = new Car("BMW",120);
+        let nums = [1,2,3,4,5,9];
+        let math5 = new Math5(nums);
+        console.log(math5.sum());
+        console.log(math5.multiply());
+        console.log(math5.minus());
+        console.log(math5.division());
+        console.log(Math5.sumS(10,20,30,40,50,60));
+    </script>
+</body>
+</html>
