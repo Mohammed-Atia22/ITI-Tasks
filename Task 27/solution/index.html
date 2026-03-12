@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
+    <style>
+        .buttons{
+            text-align: center;
+            margin-top: 50px;
+        }
+        .buttons button{
+            margin-right: 20px;
+            padding: 10px 20px;
+            background-color: rgb(228, 76, 101);
+            font-size: 20px;
+            color: white;
+            border-radius: 20px;
+            border: none;
+        }
+        .first{
+            text-align: center;
+            width: 300px;
+            height: 150px;
+            padding: 20px;
+            background-color: rgb(231, 227, 227);
+            transition: 0.3s ease;
+            margin: 100px auto;
+            font-size: 15px;
+            box-shadow: 5px 5px 20px black;
+        }
+        .first:hover{
+            box-shadow: 5px 5px 20px rgb(10, 157, 243);
+        }
+        .second{
+            margin-top: 100px;
+            margin-left: 330px;
+        }
+        .second .one,.second .three{
+            width: 40px;
+            height: 40px;
+            margin-bottom: 110px;
+        }
+        .two{
+            width: 500px;
+            height: 300px;
+        }
+        .third{
+            margin-left: 630px;
+        }
+        .w1,.w2,.w3{
+            font-size: 15px;
+            padding: 10px 20px;
+            background-color: rgb(228, 70, 96);
+            margin: 4px 0px;
+            color: white;
+            width: 40px;
+            border-radius: 20px;
+        }
+        .fourth{
+            margin-top: 50px;
+            background-color: lightblue;
+            padding: 20px;
+            margin-left: 700px;
+            width: 250px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px gray;
+
+        }
+        input,textarea{
+            display: block;
+            margin-bottom: 25px;
+            width: 220px;
+        }
+        .fourthprt2{
+            margin-top: 50px;
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            margin-left: 700px;
+            width: 250px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px gray;
+        }
+        .z1,.z2,.z3,.z4{
+            margin-bottom: 20px;
+            color: rgb(108, 222, 186);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="buttons">
+            <button class="about">About</button>
+            <button class="gallary">Gallary</button>
+            <button class="services">Services</button>
+            <button class="complain">Complain</button>
+    </div>
+    <div class="container">
+        <div class="first">Story about Snow man</div>
+        <div class="second">
+            <span><img src="./images/left.png" alt="" class="one"></span>
+            <span><img src="./images/1.jpg" alt="" class="two"></span>
+            <span><img src="./images/right.png" alt="" class="three"></span>
+        </div>
+        <div class="third">
+            <div class="w1">one</div>
+            <div class="w2">two</div>
+            <div class="w3">three</div>
+        </div>
+        <div class="fourth">
+            <form action="">
+                Name<input type="text" name="name" id="name">
+                Email<input type="email" name="email" id="email">
+                Phone<input type="number" name="number" id="number">
+                Complain<textarea name="textarea" id="textarea"></textarea>
+                <button id="send">send</button>
+            </form>
+        </div>
+        <div class="fourthprt2">
+            <div class="z1"></div>
+            <div class="z2"></div>
+            <div class="z3"></div>
+            <div class="z4"></div>
+            <button id="ineeredit">Edit</button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            let c = 1;
+            $(".first").hide();
+            $(".about").click(function(){
+                $(".second").hide();
+                $(".third").hide();
+                $(".fourth").hide();
+                $(".first").show();
+            });
+            $(".second").hide();
+            $(".gallary").click(function(){
+                $(".first").hide();
+                $(".third").hide();
+                $(".fourth").hide();
+                $(".second").show();
+                $('.one').click(function(){
+                    $(".two").fadeOut(200,function(){
+                        $(this).attr("src",`./images/${c}.jpg`).fadeIn(200);
+                    });
+                    if(c<8&&c>0){
+                        c++;
+                    }
+                })
+                $('.three').click(function(){
+                    $(".two").fadeOut(200,function(){
+                        $(this).attr("src",`./images/${c}.jpg`).fadeIn(200);
+                    });
+                    if(c>0&&c<8){
+                        c--;
+                    }
+                })
+            });
+            $(".w1").hide();
+            $(".w2").hide();
+            $(".w3").hide();
+            $(".services").click(function(){
+                $(".first").hide();
+                $(".second").hide();
+                $(".fourth").hide();
+                $(".w1").fadeIn();
+                $(".w2").fadeIn("slow");
+                $(".w3").fadeIn("4000");
+            });
+            $(".fourth").hide();
+            $(".fourthprt2").hide();
+            $(".complain").click(function(){
+                $(".first").hide();
+                $(".second").hide();
+                $(".third").hide();
+                $(".fourth").show();
+                //$("#name").val("mohamed");
+                $("form").submit(function(e){
+                    e.preventDefault();
+                    let name = `Name : ${$("#name").val()}`;
+                    let email = `Email : ${$("#email").val()}`;
+                    let phone = `Phone : ${$("#number").val()}`;
+                    let complain = `Complain : ${$("#textarea").val()}`;
+                    $(".z1").text(name);
+                    $(".z2").text(email);
+                    $(".z3").text(phone);
+                    $(".z4").text(complain);
+                    $(".fourth").hide();
+                    $(".fourthprt2").show();
+                    $("#ineeredit").click(function(e){
+                        e.preventDefault();
+                        $("#name").val($("#name").val());
+                        $("#email").val($("#email").val());
+                        $("#number").val($("#number").val());
+                        $("#textarea").val($("#textarea").val());
+                        $(".fourthprt2").hide();
+                        $(".fourth").show();
+                    })
+                });
+            });
+        });
+    </script>
+</body>
+</html>

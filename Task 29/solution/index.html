@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: white;
+            padding: 25px;
+            align-items: center;
+        }
+        .header .first h4{
+            font-size: 20px;
+        }
+        .header .second ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .header .second ul li{
+            font-size: 15px;
+            margin-right: 23px;
+        }
+        .header .second ul li:hover{
+            color: blue;
+        }
+        .header .third{
+            /* display: flex; */
+            /* flex-direction: row; */
+            /* justify-content: space-between; */
+        }
+        .header .third input[type="search"]{
+            height: 35px;
+            border-radius: 15px;
+            border: 1px solid black;
+            padding-left:10px ;
+        }
+        .header .third input[type="button"]{
+            margin-left: 16px;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            font-size: 14px;
+            border-radius: 15px;
+            border: none;
+        }
+        @media all and (max-width: 576px){
+            .header{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .header .second{
+                display: none;
+            }
+            .header .third input[type="button"]{
+                display: none;
+            }
+            .header .third input[type="search"]{
+                width: 80px;
+            }
+        }
+        .gray{
+            background-color: rgb(233, 232, 232);
+        }
+        .name{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 25px;
+            margin-left: 35px;
+        }
+        .name h1{
+            margin-bottom: 15px;
+        }
+        .data{
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        @media all and (max-width: 576px){
+            .data{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                padding: 10px;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .data img{
+            height: 100%;
+            align-self: flex-start;
+        }
+        .branches{
+            display: flex;
+            flex-direction: column;
+        }
+        .branches p{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .branches .every{
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+            margin-bottom: 30px;
+        }
+        @media all and (max-width: 576px){
+            .branches .every{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+        .branches .every .left{
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .branches .every .right{
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .branches .every .left .everyElement{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            width: 350px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 15px;
+        }
+        .branches .every .right .everyElement{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            width: 350px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 15px;
+        }
+        .branches .every .left .everyElement .elementData{
+            display: flex;
+            flex-direction: column;
+        }
+        .branches .every .right .everyElement .elementData{
+            display: flex;
+            flex-direction: column;
+        }
+        .footer{
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            background-color: rgb(11, 11, 60);
+            padding: 25px;
+            color: white;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .footer .onefoot{
+            display: flex;
+            flex-direction: column;
+            width: 32%;
+        }
+        .footer .onefoot .one{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        .footer .twofoot{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer .twofoot p:first-child{
+            font-size: 20px;
+        }
+        .footer .threefoot{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer .threefoot .two{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        @media all and (max-width: 576px){
+            .footer{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                background-color: rgb(11, 11, 60);
+                padding: 20px;
+                color: white;
+                justify-content: center;
+                align-items: center;
+            }
+            .footer .onefoot{
+                display: none;
+            }
+            .footer .threefoot .two{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="first">
+            <h4>ITI Locations</h4>
+        </div>
+        <div class="second">
+            <ul>
+                <li>Home</li>
+                <li>Locations</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class="third">
+            <input type="search" name="search" id="search" placeholder="Search">
+            <input type="button" value="Login">
+        </div>
+    </div>
+    <div class="gray">
+    <div class="name">
+        <h1>ITI Locations</h1>
+        <p>ITI Main Locations all over the country</p>
+    </div>
+    <div class="data">
+        <div class="image">
+            <img src="./photos/Screenshot 2026-03-10 124138.png" alt="image">
+        </div>
+        <div class="branches">
+            <p>Our Branches</p>
+            <div class="every">
+                <div class="left">
+                <div class="everyElement">
+                    <img src="./photos/Screenshot 2026-03-10 125038.png" alt="">
+                    <div class="elementData">
+                        <h5>ITI Smart Village</h5>
+                        <p>Giza - Egypt</p>
+                    </div>
+                </div>
+                <div class="everyElement">
+                    <img src="./photos/Screenshot 2026-03-10 125038.png" alt="">
+                    <div class="elementData">
+                        <h5>ITI Smart Village</h5>
+                        <p>Giza - Egypt</p>
+                    </div>
+                </div>
+                <div class="everyElement">
+                    <img src="./photos/Screenshot 2026-03-10 125038.png" alt="">
+                    <div class="elementData">
+                        <h5>ITI Smart Village</h5>
+                        <p>Giza - Egypt</p>
+                    </div>
+                </div>
+                <div class="everyElement">
+                    <img src="./photos/Screenshot 2026-03-10 125038.png" alt="">
+                    <div class="elementData">
+                        <h5>ITI Smart Village</h5>
+                        <p>Giza - Egypt</p>
+                    </div>
+                </div>
+                </div>
+                <div class="right">
+                <div class="everyElement">
+                    <img src="./photos/Screenshot 2026-03-10 125038.png" alt="">
+                    <div class="elementData">
+                        <h5>ITI Smart Village</h5>
+                        <p>Giza - Egypt</p>
+                    </div>
+                </div>
+                <div class="everyElement">
+                    <img src="./photos/Screenshot 2026-03-10 125038.png" alt="">
+                    <div class="elementData">
+                        <h5>ITI Smart Village</h5>
+                        <p>Giza - Egypt</p>
+                    </div>
+                </div>
+                <div class="everyElement">
+                    <img src="./photos/Screenshot 2026-03-10 125038.png" alt="">
+                    <div class="elementData">
+                        <h5>ITI Smart Village</h5>
+                        <p>Giza - Egypt</p>
+                    </div>
+                </div>
+                <div class="everyElement">
+                    <img src="./photos/Screenshot 2026-03-10 125038.png" alt="">
+                    <div class="elementData">
+                        <h5>ITI Smart Village</h5>
+                        <p>Giza - Egypt</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="onefoot">
+            <div class="one">
+                <img src="./photos/Screenshot 2026-03-10 130955.png" alt="">
+                <h5>ITI Locations</h5>
+            </div>
+            <p> laboriosam totam optio cum illo hic adipisci laborum aboriosam totam optio cum illo hic adipisci l.</p>
+        </div>
+        <div class="twofoot">
+            <p style="font-weight: bold;">Contact us</p>
+            <p>⬇️ Smart Village,B148,Cairo-Alex Desert rood</p>
+            <p>📱 +01273834534838</p>
+            <p>📩 info@gmail.com</p>
+        </div>
+        <div class="threefoot">
+            <p style="font-weight: bold;">Follow Us</p>
+            <div class="two">
+                <p>🈸facebook</p>
+                <p>🈸twitter</p>
+                <p>🈸youtube</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

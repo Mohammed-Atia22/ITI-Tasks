@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            /* background-color: gray; */
+            padding: 0px 0px;
+        }
+        .left{
+            grid-column: 1/2;
+            grid-row: 1/4;
+            /* background-color: white; */
+            padding: 15px;
+        }
+        /* .left .one{
+            grid-row: 2/3;
+            grid-column: 1/2;
+        } */
+        .left .two{
+            grid-row: 1/2;
+            grid-column: 1/2;
+        }
+        .left .two ul{
+            list-style: none;
+            margin: 10px 0px;
+        }
+        .left .two ul li{
+            margin-bottom: 10px;
+        }
+        .left .three{
+            margin: 20px 15px;
+        }
+        .left .three span{
+            margin: 10px 5px;
+        }
+        .left .four{
+            margin: 10px 0px;
+            grid-column: 1/2;
+        }
+        .left .four p:first-child{
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        .left .four p:last-child{
+            font-size: 15px;
+            margin-left: 20px;
+        }
+        .left .five{
+            margin-left: 14px;
+        }
+        .right{
+            grid-column: 2/6;
+            grid-row: 1/4;
+        }
+        .right .header{
+            grid-column: 2/6;
+            background-color: gold;
+            padding: 20px;
+        }
+        .right .header ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            color: white;
+            
+        }
+        .right .imagecont .images{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+        /* .right .imagecont .images{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 0;
+        } */
+        .right .imagecont .images img{
+            width: 250px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="one">
+                <img src="./photos/Screenshot 2026-03-11 114245.png" alt="">
+            </div>
+            <div class="two">
+                <ul>
+                    <li>portofolio</li>
+                    <li>about us</li>
+                    <li>Blog</li>
+                    <li>Buy the theme</li>
+                </ul>
+            </div>
+            <div class="three">
+                <span>🎮</span>
+                <span>💻</span>
+                <span>📱</span>
+            </div>
+            <div class="four">
+                <p>A text widget</p>
+                <p> obcaecati sapiente voluptatem hic totam enim temporibus porro rem labore fuga voluptatibus!</p>
+            </div>
+            <div class="five">
+                <p>Flicker</p>
+                <div class="images">
+                    <img src="./photos/Screenshot 2026-03-11 121030.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 121030.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 121030.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 121030.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 121030.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 121030.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="header">
+                <ul>
+                    <li>All</li>
+                    <li>illustration</li>
+                    <li>motion</li>
+                    <li>photography</li>
+                    <li>print</li>
+                </ul>
+            </div>
+            <div class="imagecont">
+                <div class="images">
+                    <img src="./photos/Screenshot 2026-03-11 125341.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 125341.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 125341.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 125341.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 125341.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 125341.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 125341.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 125341.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 125341.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 125341.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 125341.png" alt="">
+                    <img src="./photos/Screenshot 2026-03-11 125341.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
