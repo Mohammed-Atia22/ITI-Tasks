@@ -1,0 +1,19 @@
+77 / 110 testcases passed
+
+var checkInclusion = function(s1, s2) {
+    let rs1='';
+    if(s1===s2){
+        return true;
+    }
+    else{
+        for(let i=0;i<s2.length;i++){
+            let str = s2.substr(i,s1.length);
+            let newstr = str.split("").sort().join("");
+            let news1 = s1.split("").sort().join("");
+            if(newstr === news1){
+                return true;
+            }
+        }
+        return false;
+    }
+};

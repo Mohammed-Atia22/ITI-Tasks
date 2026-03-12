@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width:100%;
+            margin:5px auto;
+            height: 100%;
+        } 
+        .nav{
+            background-color: black;
+        }
+        .nav p{
+            color: white;
+            display: inline-block;
+            margin: 10px;
+        }
+        .nav ul{
+            list-style: none;
+            display: inline-block;
+            float: right;
+            margin-right: 30px;
+        }
+        .nav ul li{
+            display: inline-block;
+            color: white;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        .nav ul li:hover{
+            color: red;
+            transform: scale(1.2);
+        }
+        .header{
+            margin: 20px;
+            padding: 10px;
+            background:linear-gradient(to left,orange,pink,red);
+        }
+        .firsth{
+            text-align: center;
+            color: white;
+        }
+        .firstp{
+            text-align: center;
+            color: white;
+
+        }
+        .butt{
+            margin-left: 570px;
+            transition: all 0.3s ease;
+        }
+        .butt:hover{
+            background-color: orange;
+            transform: scale(1.5) ;
+            border: none;
+            color: white;
+        }
+        .one{
+            width: 25%;
+            display: inline-block;
+            background-color: lightgray;
+            margin: 10px;
+            padding: 20px;
+        }
+        .one ul{
+            list-style: none;
+            margin-right: 10px;
+            
+        }
+        .one ul li{
+            margin: 5px 0px;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+        .one ul li:hover{
+            background-color: orange;
+            color: white;
+            transform: scale(1.1);
+        }
+        .two{
+            width: 55%;
+            display: inline-block;
+            margin-left: 40px;
+            margin-right: 10px;
+            float: right;
+        }
+        .two tr{
+            width: 100%;
+            margin: 10px 0px;
+        }
+        .two tr td{
+            width: 35%;
+            background-color: lightgray;
+            margin-left: 20px;
+            margin-right: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+
+        }
+        .two tr td:hover{
+            box-shadow:10px 10px gray;
+            transform: translateX(5px);
+        }
+        .footer{
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <p>MySite</p>
+            <ul>
+                <li>Home</li>
+                <li>contact</li>
+                <li>about</li>
+                <li>tasks</li>
+            </ul>
+        </nav>
+        <header class="header">
+            <h1 class="firsth">welcome to my interactive website</h1>
+            <p class="firstp">my flexible layout</p>
+            <button class="butt">get started</button>
+        </header>
+        <div class="maincontent">
+            <section class="one">
+                <ul>
+                    <li>Categories</li>
+                    <li>Html</li>
+                    <li>css</li>
+                    <li>js</li>
+                    <li>react</li>
+                    <li>nodejs</li>
+                    <li>vue</li>
+                </ul>
+            </section>
+            <section class="two">
+                <table>
+                    <tr>
+                        <td>
+                            <p>card1</p>
+                            <p>Lore iusto quas? Sinta aut perferendis quos?</p>
+                        </td>
+                        <td>
+                            <p>card2</p>
+                            <p>Lore iusto quas? Sinta aut perferendis quos?</p>
+                        </td>
+                        <td>
+                            <p>card3</p>
+                            <p>Lore iusto quas? Sinta aut perferendis quos?</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>card4</p>
+                            <p>Lore iusto quas? Sinta aut perferendis quos?</p>
+                        </td>
+                        <td>
+                            <p>card5</p>
+                            <p>Lore iusto quas? Sinta aut perferendis quos?</p>
+                        </td>
+                        <td>
+                            <p>card6</p>
+                            <p>Lore iusto quas? Sinta aut perferendis quos?</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>card7</p>
+                            <p>Lore iusto quas? Sinta aut perferendis quos?</p>
+                        </td>
+                        <td>
+                            <p>card8</p>
+                            <p>Lore iusto quas? Sinta aut perferendis quos?</p>
+                        </td>
+                        <td>
+                            <p>card9</p>
+                            <p>Lore iusto quas? Sinta aut perferendis quos?</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>card10</p>
+                            <p>Lore iusto quas? Sinta aut perferendis quos?</p>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+        <footer class="footer">
+            all Rights reserved @ ITI 
+        </footer>
+    </div>
+</body>
+</html>

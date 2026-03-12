@@ -1,0 +1,36 @@
+// fails in test 52
+
+var groupAnagrams = function(strs) {
+    if(strs.length === 0){
+        return [strs];
+    }
+    else if(strs.length === 1){
+        return [strs];
+    }
+    else if(strs.length > 1){
+        //strs.sort();
+        if(strs.length ==2 && strs[0]===strs[1]){
+            return [strs];
+        }
+        let res = [];
+       for(let i=0;i<strs.length;i++){
+        let sol = [];
+            for(let j=0;j<strs.length;j++){
+                if(strs[i].length === strs[j].length){
+                    let s1 = strs[i].split("").sort().join("");
+                    let t1 = strs[j].split("").sort().join("");
+                    if(s1==t1&&sol.indexOf(strs[j])==-1){
+                        sol.push(strs[j]);
+                    }
+                }
+            }
+            
+            let exst = res.some(data => data.includes(sol[0])&&sol[0] !== "");
+            if (!exst) {
+                res.push(sol);
+            }
+            
+       }
+       return res;
+    }
+};

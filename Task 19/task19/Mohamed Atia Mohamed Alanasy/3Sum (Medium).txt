@@ -1,0 +1,30 @@
+311 / 316 testcases passed
+
+var threeSum = function(nums) {
+    nums.sort((a,b)=>a-b);
+    let res = [];
+    const sett = new Set();
+    for(let i=0;i<nums.length - 2;i++){
+        let mres = [];
+        for(let j=i+1;j<nums.length - 1;j++){
+            for(let k=j+1;k<nums.length;k++){
+                if(i!=j&&i!=k&&j!=k){
+                    if(nums[i] + nums[j] + nums[k] == 0){
+                        mres.push(nums[i]);
+                        mres.push(nums[j]);
+                        mres.push(nums[k]);
+                        if(!res.includes(mres)){
+                            //res.push(mres.toString());
+                            sett.add(mres.toString());
+                        }
+                        mres = [];
+                    }
+                }
+            }
+        }
+    }
+    for (let str of sett) {
+        res.push(str.split(',').map(Number));
+    }
+   return res;
+};

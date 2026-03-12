@@ -1,0 +1,25 @@
+var isPalindrome = function(s) {
+    function isAlphanumeric(char) {
+        return /^[a-zA-Z0-9]$/.test(char);
+    }
+    let lower = s.toLowerCase();
+    let strings='';
+    for(let i=0;i<lower.length;i++){
+        if(isAlphanumeric(lower[i])){
+            strings += lower[i];
+        }
+    }
+    let err =0;
+    let num = strings.length
+    for(let j=0,k=num-1;j<num,k>=0;j++,k--){
+        if(strings[j] !== strings[k]){
+            err++
+        }
+    }
+    if(err){
+        return false;
+    }
+    else{
+        return true;
+    }
+};
