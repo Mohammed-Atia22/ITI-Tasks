@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="header" style="background-color: rgb(52, 240, 240);margin-bottom: 20px;">
+        <h1 style="display: inline-block;margin-left: 20px;">ITI Electro Shop</h1>
+        <ul style="display: inline-block;list-style: none;margin-left: 800px;">
+            <li style="display: inline-block;margin-right: 8px;cursor: pointer;" class="shop">Shop</li>
+            <li style="display: inline-block;margin-right: 8px;cursor: pointer;" class="favourite">Favourite</li>
+            <li style="display: inline-block;cursor: pointer;" class="cart">Cart</li>
+        </ul>
+    </div>
+    <form action="" style="text-align: center;margin-bottom: 30px;">
+        <input type="search" name="item" id="search" style="width: 400px;">
+        <input type="submit" value="search" class="searchbtn">
+    </form>
+
+    <script>
+        products = [
+            { id: 1, name: "Smartphone X", title: "Smartphone X Pro", description: "High-performance smartphone with OLED display.", price: 799, image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" },
+            { id: 2, name: "Laptop Air", title: "Ultra Slim Laptop", description: "Lightweight laptop for work and gaming.", price: 1299, image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8" },
+            { id: 3, name: "Bluetooth Headphones", title: "Wireless Noise Cancelling", description: "Immersive sound with deep bass.", price: 199, image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" },
+            { id: 4, name: "Smartwatch", title: "Fitness Smartwatch 2025", description: "Tracks health metrics all day.", price: 149, image: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b" },
+            { id: 5, name: "Gaming Keyboard", title: "RGB Mechanical Keyboard", description: "Blue switch mechanical keyboard.", price: 89, image: "https://images.unsplash.com/photo-1593642532973-d31b6557fa68" },
+            { id: 6, name: "Samrt Watch", title: "Ergonomic Pro Mouse", description: "Precision sensor and programmable buttons.", price: 49, image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&q=80" },
+            { id: 7, name: "4K Monitor", title: "Ultra HD 27-inch Monitor", description: "Sharp and vivid colors for work and gaming.", price: 399, image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8" },
+            { id: 8, name: "DSLR Camera", title: "Professional DSLR Camera", description: "High-quality photography tool.", price: 999, image: "https://images.unsplash.com/photo-1588508065123-287b28e013da?w=500&q=80" },
+            { id: 9, name: "Wireless Speaker", title: "Portable Bluetooth Speaker", description: "Crystal clear sound on the go.", price: 59, image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&q=80" },
+            { id: 10, name: "KeyBoard Pro", title: "10-inch HD Tablet", description: "Perfect for study, movies, and work.", price: 349, image: "https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=500&q=80" },
+            { id: 11, name: "Speaker", title: "Virtual Reality Set", description: "Immersive VR gaming experience.", price: 299, image: "https://images.unsplash.com/photo-1591405351990-4726e331f141?w=500&q=80" },
+            { id: 12, name: "Drone", title: "4K Camera Drone", description: "Perfect aerial photography.", price: 499, image: "https://images.unsplash.com/photo-1512820790803-83ca734da794" },
+            { id: 13, name: "Wireless Charger", title: "Wireless Earbuds", description: "With active noise cancellation.", price: 129, image: "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=500&q=80" },
+            { id: 14, name: "SSD HardDesk", title: "Fast Charging 20000mAh", description: "Charge devices multiple times.", price: 39, image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&q=80" },
+            { id: 15, name: "Powe Bank", title: "50-inch 4K Smart TV", description: "Netflix, YouTube, and more built-in.", price: 699, image: "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=500&q=80" }
+        ]
+        for(var i=0;i<products.length;i++){
+            div=document.createElement("div");
+            div.setAttribute("class",`${i}`);
+            div.style.cssText=`display: inline-block;background-color: white;margin-right:10px;margin-bottom:20px;text-align:center;padding-right:30px;margin-left:20px`;
+            ul=document.createElement("ul");
+            ul.setAttribute("class",`unord`);
+            ul.style.cssText=`list-style:none;`;
+            li1=document.createElement("li");
+            li1.setAttribute("class",`li1`);
+            img = document.createElement("img");
+            img.setAttribute("src",`${products[i].image}`);
+            img.style.cssText=`width: 200px;height:200px`;
+            li1.appendChild(img);
+            li1.style.cssText=`margin-bottom:6px`;
+            li2=document.createElement("li");
+            li2.setAttribute("class",`li2`);
+            li2.textContent=`${products[i].title}`;
+            li2.style.cssText=`margin-bottom:6px;font-weight: bold;`;
+            li3=document.createElement("li");
+            li3.setAttribute("class",`li3`);
+            li3.textContent=`${products[i].price}`;
+            li3.style.cssText=`margin-bottom:6px;font-weight: bold;`;
+            ///////////////////////////////////////////////////////
+            li4=document.createElement("li");
+            li4.setAttribute("class",`li4`);
+            li4.style.cssText=`margin-bottom:6px`;
+            btn1 = document.createElement("button");
+            btn1.setAttribute("class",`adcart`);
+            btn1.value=`Add to cart`;
+            btn1.textContent=`Add to cart`;
+            btn1.style.cssText=`background-color:rgb(52, 240, 240);color:white;border:none`;
+            li4.appendChild(btn1);
+            li4.style.cssText=`margin-bottom:10px;padding:5px;`;
+            ///////////////////////////////////////////////////////////
+            li5=document.createElement("li");
+            li5.setAttribute("class",`li5`);
+            btn2 = document.createElement("button");
+            btn2.setAttribute("class",`favrt`);
+            btn2.value=`Favourite`;
+            btn2.textContent=`Favourite`;
+            btn2.style.cssText=`background-color:rgb(52, 240, 240);color:white;border:none`;
+            li5.appendChild(btn2);
+            li5.style.cssText=`margin-bottom:6px:padding:5px`;
+            ul.appendChild(li1);
+            ul.appendChild(li2);
+            ul.appendChild(li3);
+            ul.appendChild(li4);
+            ul.appendChild(li5);
+            div.appendChild(ul);
+            document.body.appendChild(div);
+        }
+
+        var items = [];
+        const adcart = document.getElementsByClassName("adcart");
+        for (let i = 0; i < adcart.length; i++) {
+            adcart[i].addEventListener("click", function(e) {
+            var num = adcart[i].parentElement.parentElement.parentElement.className;
+            //document.writeln(products[+num].name+" "+products[+num].price)
+            localStorage.setItem(`item${+num}`,+num);
+            items.push(`item${+num}`);
+            alert("the item added to the cart");
+        });
+        }
+        var items2 = [];
+        const favrt = document.getElementsByClassName("favrt");
+        for (let i = 0; i < favrt.length; i++) {
+            favrt[i].addEventListener("click", function(e) {
+            var num2 = favrt[i].parentElement.parentElement.parentElement.className;
+            //document.writeln(products[+num].name+" "+products[+num].price)
+            localStorage.setItem(`item2${+num2}`,+num2);
+            items2.push(`item2${+num2}`);
+            alert("the item added to the favourite");
+        });
+        }
+    shop = document.querySelector(".shop");
+    favourite = document.querySelector(".favourite");
+    cart = document.querySelector(".cart");
+    cart.addEventListener("click",function(e){
+        var total = 0;
+        for(var i=0;i<items.length;i++){
+            var local = items[i];
+            var idx = localStorage.getItem(local);
+            total += products[+idx].price;
+            document.writeln(`
+                    <h3>Total : ${total}</h3>
+                    <ul style='list-style:none;border:1px solid black;display:inline-block;padding:20px'>
+                        <li style='margin-bottom:10px'>
+                            <img src=${products[+idx].image} style='width:200px;height:200px'>
+                        </li>
+                        <li style='margin-bottom:10px'>
+                            ${products[+idx].name}
+                        </li>
+                        <li style='margin-bottom:10px'>
+                            ${products[+idx].price}
+                        </li>
+                    </ul>
+            `)
+        }
+        //document.writeln(<h3>Total : ${total}</h3>);
+    })
+    favourite.addEventListener("click",function(e){
+        for(var i=0;i<items2.length;i++){
+            var local2 = items2[i];
+            var idx2 = localStorage.getItem(local2);
+            document.writeln(`
+                    <ul style='list-style:none;border:1px solid black;display:inline-block;padding:20px'>
+                        <li style='margin-bottom:10px'>
+                            <img src=${products[+idx2].image} style='width:200px;height:200px'>
+                        </li>
+                        <li style='margin-bottom:10px'>
+                            ${products[+idx2].name}
+                        </li>
+                        <li style='margin-bottom:10px'>
+                            ${products[+idx2].price}
+                        </li>
+                    </ul>
+            `)
+        }
+        //document.writeln(<h3>Total : ${total}</h3>);
+    })
+    search = document.querySelector("#search");
+    searchbtn = document.querySelector(".searchbtn");
+    searchbtn.addEventListener("click",function(e){
+        e.preventDefault();
+        //console.log(search.value);
+        for(var i=0;i<products.length;i++){
+            var str = products[i].name.toLowerCase();
+            //console.log(str);
+            if(str.includes(search.value)){
+                document.writeln(`
+                    <ul style='list-style:none;border:1px solid black;display:inline-block;padding:20px'>
+                        <li style='margin-bottom:10px'>
+                            <img src=${products[i].image} style='width:200px;height:200px'>
+                        </li>
+                        <li style='margin-bottom:10px'>
+                            ${products[i].name}
+                        </li>
+                        <li style='margin-bottom:10px'>
+                            ${products[i].price}
+                        </li>
+                    </ul>
+            `)
+            console.log(products[i]);
+            }
+        }
+    })
+    </script>
+</body>
+</html>

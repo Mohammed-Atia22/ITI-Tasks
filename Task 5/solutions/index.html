@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        var numbers = [3,1,2,4,3,5,1];
+        numbers.sort(function(a,b){
+            return a-b
+        })
+        console.log(numbers);
+
+        var numbers2 = [];
+        for(var i=0;i<numbers.length;i++){
+            if(numbers[i] != numbers[i+1]){
+                numbers2.push(numbers[i]);
+            }
+        }
+        console.log(numbers2)
+        console.log(numbers2[0]);
+        console.log(numbers2[numbers2.length - 1]);
+        numbers2.toString();
+        // console.log(Math.max(numbers2));
+        // console.log(Math.min(numbers2));
+
+        var numbers3 = [30,40,50,80,90,10];
+        var numbers4 = [];
+        var numbers5 = [];
+        for(var i=0;i<numbers.length;i++){
+            if(numbers3[i]>50){
+                numbers4.push(numbers3[i]);
+            }
+        }
+        console.log(numbers4)
+        numbers3.filter(function(a){
+            if(a>50){
+                numbers5.push(a);
+            }
+        })
+        console.log(numbers5);
+
+        function sumall(arr3){
+            console.log(eval(arr3.join("+")));
+        }
+        sumall(numbers3)
+
+        var dat = new Date();
+        var year = ["Jan","feb","march","april","may"]
+        console.log(year[dat.getMonth()]);
+
+        function rand(){
+            var num = Math.random()*100000000;
+            var num1 = Math.floor(num);
+            num1 = num1.toString();
+            if(num1.length==7){
+                num1 += '0';
+            }
+            else if(num1.length==6){
+                num1 += '00';
+            }
+            console.log(num1);
+        }
+        rand();
+
+        // var str33 = '';
+        // if(str33.length==0){
+        //     console.log('the string is empty');
+        // }else if(str.length<8){
+        //     console.log('the length should be 8 chars');
+        // }
+        // str33.trim();
+        // str33.toLowerCase();
+
+
+        var str44 = "the quick brown fox";
+        str55 = str44.split(" ");
+        var str56 = "";
+       for(var i=0;i<str55.length;i++){
+            wrd = str55[i].replace(str55[i][0],str55[i][0].toUpperCase());
+            str56+=wrd;
+            str56+=" ";
+       }
+       console.log(str56);
+
+       var str77 = "web development tuttorial";
+        str78 = str77.split(" ");
+        var x =0;
+        var c = 0;
+       for(var i=0;i<str78.length;i++){
+        x = 0;
+        c = 0;
+            for(var j=0;j<str78.length;j++){
+                if(str78[i].length>str78[j].length){
+                    x = i;
+                    c++;
+                }
+            }
+            if(c==str78.length){
+                break;
+            }
+       }
+       console.log(str78[c]);
+
+       var yy = 4;
+       var mm = "";
+       function mask(str){
+        for(var i=0;i<str.length-5;i++){
+                mm+="*";
+        }
+        var bb = str.length-4;
+        while(yy>0){
+            mm+=str[bb];
+            bb++;
+            yy--;
+        }
+        console.log(mm);
+       }
+       mask("012345678910");
+    </script>
+</body>
+</html>

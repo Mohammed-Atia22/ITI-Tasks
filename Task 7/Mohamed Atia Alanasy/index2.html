@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <h1>Students affairs dashpoard</h1>
+    <div class="first" style="background-color: lightgray; padding: 20px; width: 400px;margin-bottom: 200px;">
+        <p>select student</p>
+    <form action="" class="firstform">
+        <select name="students" class="one">
+            <option value="1">Choose student</option>
+            <!-- <option value="2" class="opt"></option>
+            <option value="3" class="opt"></option>
+            <option value="4" class="opt"></option>
+            <option value="5" class="opt"></option>
+            <option value="6" class="opt"></option> -->
+        </select>
+        <!-- <input type="submit" value="submit"> -->
+    </form>
+    </div>
+    <div class="second" style="margin-top: 100px 20px; background-color: lightcyan; padding: 30px;">
+        <p>Student Details</p>
+        <form action="" class="secondform">
+            <div class="row1">
+                <span>first name</span>
+                <input type="text" class="text1" name="fname" id="" style="width: 40%;margin-bottom: 20px;">
+                <span style="margin-left: 20px;">last name</span>
+                <input type="text" class="text2" name="lname" id="" style="width: 40%;margin-bottom: 20px;">
+            </div>
+            <div class="row2">
+                <span>course</span>
+                <input type="text" class="text3" name="crs" id="" style="width: 40%;margin-bottom: 20px;">
+                <span style="margin-left: 20px;">grade</span>
+                <input type="text" class="text4" name="phone" id="" style="width: 40%;margin-bottom: 20px;">
+            </div>
+            <div class="row3">
+                <span>phone</span>
+                <input type="text" class="text5" name="email" id="" style="width: 40%;margin-bottom: 20px;">
+                <span style="margin-left: 20px;">email</span>
+                <input type="text" class="text6" name="grade" id="" style="width: 40%;margin-bottom: 20px;">
+            </div>
+            <div class="buttons">
+                <!-- <input type="submit" value="submit" class="submt"> -->
+                 <button class="submt">submit</button>
+                <button class="save">save</button>
+                <button class="ref">ref</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <script>
+        students = [
+  { fname:"Ahmed", lname:"Ali", crs:"JavaScript", phone:"01011111111", email:"ahmed@mail.com", grade:"A" },
+  { fname:"Sara", lname:"Hassan", crs:"React", phone:"01122222222", email:"sara@mail.com", grade:"B+" },
+  { fname:"Omar", lname:"Mostafa", crs:"Node.js", phone:"01233333333", email:"omar@mail.com", grade:"A-" },
+  { fname:"Laila", lname:"Yousef", crs:"Python", phone:"01044444444", email:"laila@mail.com", grade:"A" },
+  { fname:"Yassin", lname:"Mahmoud", crs:"MongoDB", phone:"01155555555", email:"yassin@mail.com", grade:"B" }
+];
+var newarr;
+form = document.querySelector(".one");
+for(var i=1;i<=students.length;i++){
+    //form[i].textContent=students[i-1].fname;
+    option4 = document.createElement("option");
+    option4.value = students[i-1].fname;
+    option4.textContent = students[i-1].fname;
+    option4.setAttribute("class",`option${i}`);
+    form.appendChild(option4);
+}
+
+option5 = document.querySelector(".option1");
+text1 = document.querySelector(".text1");
+text2 = document.querySelector(".text2");
+text3 = document.querySelector(".text3");
+text4 = document.querySelector(".text4");
+text5 = document.querySelector(".text5");
+text6 = document.querySelector(".text6");
+var name;
+var indx;
+form.addEventListener("change",function(e){ 
+    console.log(e.target.value);
+    name = e.target.value;
+    for(var i=0;i<students.length;i++){
+    if(students[i].fname===name){
+        indx=i;
+        console.log(indx)
+        break;
+    }
+}
+
+text1.textContent=students[indx].fname;
+text1.value=students[indx].fname;
+
+text2.textContent=students[indx].lname;
+text2.value=students[indx].lname;
+
+text3.textContent=students[indx].crs;
+text3.value=students[indx].crs;
+
+text4.textContent=students[indx].phone;
+text4.value=students[indx].phone;
+
+text5.textContent=students[indx].email;
+text5.value=students[indx].email;
+
+text6.textContent=students[indx].grade;
+text6.value=students[indx].grade;
+}) 
+
+submt = document.querySelector(".submt");
+submt.addEventListener("click",function(e){
+    e.preventDefault();
+    // students[indx].fname=location.href.split("?")[1].split("&")[0].split("=")[1];
+    // console.log(location.href.split("?")[1].split("&")[0].split("=")[1]);
+    // text1.textContent = location.href.split("?")[1].split("&")[0].split("=")[1];
+    // text1.value = location.href.split("?")[1].split("&")[0].split("=")[1];
+    students[indx].fname=text1.value;
+    //console.log(text1.value);
+    text1.textContent=text1.value;
+    students[indx].fname=text1.value;
+    //console.log(text1.textContent);
+    students[indx].lname=text2.value;
+    text2.textContent = text2.value;
+    students[indx].crs=text3.value;
+    text3.textContent = text3.value;
+    students[indx].phone=text4.value;
+    text4.textContent = text4.value;
+    students[indx].email=text5.value;
+    text5.textContent = text5.value;
+    students[indx].grade=text6.value;
+    text6.textContent = text6.value;
+    newarr = [text1.value,text2.value,text3.value,text4.value,text5.value,text6.value];
+    console.log(newarr)
+})
+// option5.onclick=function(e){
+//     console.log(option1.textContent);
+// }
+// option4 = document.createElement("option");
+// text1.textContent = name;
+// text1.value = name;
+save = document.querySelector(".save");
+save.addEventListener("click",function(e){
+    e.preventDefault();
+    //students.push(newarr);
+    students[indx]={
+        fname:text1.value,
+        lname:text2.value,
+        crs:text3.value,
+        phone:text4.value,
+        email:text5.value,
+        grade:text6.value
+    }
+})
+
+ref = document.querySelector(".ref");
+ref.addEventListener("click",function(e){
+    e.preventDefault();
+    for(var i=1;i<=students.length;i++){
+    //form[i].textContent=students[i-1].fname;
+    option4 = document.createElement("option");
+    option4.value = students[i-1].fname;
+    option4.textContent = students[i-1].fname;
+    option4.setAttribute("class",`option${i}`);
+    form.appendChild(option4);
+}
+})
+    </script>
+</body>
+</html>

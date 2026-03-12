@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        th{
+            border: 1px solid black;
+            padding: 20px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="" style="margin-bottom: 30px;">
+        <input type="text" name="" id="" class="search" placeholder="write the name">
+        <input type="submit" value="submit" class="submit">
+    </form>
+
+    <form action="" class="second">
+        <select name="sort" id="" class="sort5">
+            <option value="sort">sort</option>
+            <option value="age">sort by age</option>
+            <option value="name">sort by name</option>
+        </select>
+    </form>
+
+    <table class="table1" style="width: 300px;border: 1px solid black;margin-top: 40px;">
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>course</th>
+        </tr>
+    </table>
+    <script>
+        table1=document.querySelector(".table1");
+        var students = [
+            { name: "Ali", age: 20, Crs: "CS" },
+            { name: "Sara", age: 22, Crs: "Math" },
+            { name: "Omar", age: 19, Crs: "Physics" },
+            { name: "Laila", age: 21, Crs: "CS" },
+            { name: "Hassan", age: 23, Crs: "Engineering" },
+            { name: "Mona", age: 20, Crs: "Biology" },
+            {name: "Kareem", age: 24, Crs: "Math" },
+            { name: "Noor", age: 18, Crs: "CS" }
+            ];
+
+        search = document.querySelector(".search");
+        submit = document.querySelector(".submit");
+
+        submit.addEventListener('click',function(e){
+            e.preventDefault();
+            console.log(search.value);
+            var text = search.value;
+            console.log(search.innerText);
+            for(var i=0;i<students.length;i++){
+                if(students[i].name==text){
+                    document.writeln("Name = "+students[i].name+"   ,Age = "+students[i].age+"   ,Course = "+students[i].Crs);
+                    break;
+                }
+            }
+        })
+
+        for(var i=0;i<students.length;i++){
+            tr=document.createElement("tr");
+            td1=document.createElement("td");
+            td2=document.createElement("td");
+            td3=document.createElement("td");
+            td1.innerText=`${students[i].name}`;
+            td2.innerText=`${students[i].age}`;
+            td3.innerText=`${students[i].Crs}`;
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            td1.style.cssText=`
+                border: 1px solid black;
+                padding: 20px 10px;`
+            td2.style.cssText=`
+                border: 1px solid black;
+                padding: 20px 10px;`
+            td3.style.cssText=`
+                border: 1px solid black;
+                padding: 20px 10px;`
+            table1.appendChild(tr);
+        }
+
+        sort5 = document.querySelector(".sort5");
+        sort5.addEventListener('change',function(e){
+            //console.log(e.target.value);
+            if(e.target.value=='age'){
+                students.sort(function(a,b){
+                    return a.age-b.age;
+                })
+                document.writeln("<table style='border:1px solid black'>");
+                    document.writeln("<tr><th style='border: 1px solid black;padding:20px 10px;'>name</th><th style='border: 1px solid black;padding:20px 10px;'>age</th><th style='border: 1px solid black;padding:20px 10px;'>course</th></tr>")
+                for(var i=0;i<students.length;i++){
+                    document.writeln("<tr>"+"<td style='border: 1px solid black;padding:20px 10px;'>"+students[i].name+"</td>"+"<td style='border: 1px solid black;padding:20px 10px;'>"+students[i].age+"</td>"+"<td style='border: 1px solid black;padding:20px 10px;'>"+students[i].Crs+"</td>"+"</tr>");
+                    document.writeln("<br>");
+                }
+                document.writeln("</table>")
+            }
+            else if(e.target.value=='name'){
+                students.sort(function(a,b){return  a.name.localeCompare(b.name)})
+                document.writeln("<table style='border:1px solid black'>");
+                    document.writeln("<tr><th style='border: 1px solid black;padding:20px 10px;'>name</th><th style='border: 1px solid black;padding:20px 10px;'>age</th><th style='border: 1px solid black;padding:20px 10px;'>course</th></tr>")
+                for(var i=0;i<students.length;i++){
+                    document.writeln("<tr>"+"<td style='border: 1px solid black;padding:20px 10px;'>"+students[i].name+"</td>"+"<td style='border: 1px solid black;padding:20px 10px;'>"+students[i].age+"</td>"+"<td style='border: 1px solid black;padding:20px 10px;'>"+students[i].Crs+"</td>"+"</tr>");
+                    document.writeln("<br>");
+                }
+                document.writeln("</table>")
+            }
+        })
+    </script>
+</body>
+</html>

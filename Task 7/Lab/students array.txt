@@ -1,0 +1,9 @@
+having this students array do the following 
+
+ students = [
+  { fname:"Ahmed", lname:"Ali", crs:"JavaScript", phone:"01011111111", email:"ahmed@mail.com", grade:"A" },
+  { fname:"Sara", lname:"Hassan", crs:"React", phone:"01122222222", email:"sara@mail.com", grade:"B+" },
+  { fname:"Omar", lname:"Mostafa", crs:"Node.js", phone:"01233333333", email:"omar@mail.com", grade:"A-" },
+  { fname:"Laila", lname:"Yousef", crs:"Python", phone:"01044444444", email:"laila@mail.com", grade:"A" },
+  { fname:"Yassin", lname:"Mahmoud", crs:"MongoDB", phone:"01155555555", email:"yassin@mail.com", grade:"B" }
+];

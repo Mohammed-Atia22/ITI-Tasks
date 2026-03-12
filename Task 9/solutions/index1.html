@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        var toDoList = {
+            names:[],
+            addTask:function(taskName){
+                this.names.push(taskName);
+            },
+            removeTask:function(taskName){
+                this.names.pop(taskName);
+            },
+            listAllTasks:function(){
+                var namess = this.names;
+                console.log(namess);
+                for(var j=0;j<namess.length;j++){
+                    console.log(namess[j]);
+                }
+            }
+        }
+        toDoList.addTask("one");
+        toDoList.addTask("two");
+        toDoList.removeTask("two");
+    </script>
+</body>
+</html>

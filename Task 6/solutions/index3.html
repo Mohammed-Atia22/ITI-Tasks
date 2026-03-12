@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+    var counter=0;
+    setInterval(loop,1000)
+    function loop(){
+        document.write(`<h4 style='border:2px solid red;width:20px'>${counter}</h4>`);
+        counter++;
+        document.title = counter-1;
+    }
+
+    </script>
+</body>
+</html>

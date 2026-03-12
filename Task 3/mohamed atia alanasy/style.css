@@ -1,0 +1,109 @@
+body{
+}
+
+.one{
+    list-style: none;
+    float: right;
+    display: block;
+    border-bottom: 0.5px solid rgb(122, 118, 118);
+    padding-bottom: 15px;
+}
+.one li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.one li:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.two{
+    list-style: none;
+    padding-top: 80px;
+    margin: 20px auto;
+    display: block;
+    padding-left: 230px;
+    border-bottom: 0.5px solid rgb(122, 118, 118);
+    padding-bottom: 20px;
+}
+.two li{
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.two li:hover{
+    color: red;
+    cursor: pointer;
+}
+.three{
+    list-style: none;
+    padding-top: 10px;
+    margin: 20px auto;
+    display: block;
+    padding-left: 300px;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+.three li{
+    display: inline-block;
+    margin-right: 50px;
+}
+.cont{
+    background-color: rgb(71, 244, 244,0.5);
+    padding: 30px;
+}
+.cont p{
+    margin-left: 20px;
+}
+.cont .sqr{
+    background-color: white;
+    padding: 25px;
+}
+.cont .sqr .left{
+    margin-right: 20px;
+    display: inline-block;
+}
+.cont .sqr img{
+    padding-bottom: 20px;
+}
+.cont .sqr ul{
+    list-style: none;
+}
+.cont .sqr ul li{
+    display: inline-block;
+    margin-right: 10px;
+}
+.cont .sqr ul li img{
+    width: 80px;
+    height: 40px;
+}
+.cont .sqr .right{
+    display: inline-block;
+    float: inline-end;
+}
+.cont .sqr .right p.one{
+    margin-right: 400px;
+    border-bottom: 1px solid red;
+    
+}
+table{
+    border-bottom: 1px solid black; 
+    margin: 20px auto ;
+}
+table tr td{
+    border-bottom: 1px solid black;
+    padding: 20px;
+    margin-left: 30px;
+    padding-left: 60px;
+}
+div.sec10{
+    display: block;
+    margin: 20px 0px;
+    padding: 10px;
+}
+div.sec10 ul{
+    display: inline-block;
+    margin-right: 20px;
+}
+

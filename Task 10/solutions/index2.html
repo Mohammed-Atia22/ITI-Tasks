@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <button class="btn">button</button>
+</head>
+<body>
+    <script>
+        var arr = [{
+            name:"emp1",
+            salary:4000,
+            depart:"CS"
+        },{
+            name:"emp2",
+            salary:4000,
+            depart:"IT"
+        },{
+            name:"emp3",
+            salary:4000,
+            depart:"CS"
+
+        },{
+            name:"emp4",
+            salary:4000,
+            depart:"IT"
+        },{
+            name:"emp5",
+            salary:4000,
+            depart:"CS"
+
+        }];
+/////////////////////////////////////////////////////////////
+        function returnems(){
+            function returnemps2(){
+                for(var i=0;i<arr.length;i++){
+                    console.log(arr[i]);
+                }
+            }
+            return returnemps2;
+        }
+        var arrreturn = returnems();
+//////////////////////////////////////////////////////////////////
+
+        function Parent() {
+        var counter = 0;
+        var CounterOperation = {
+        increaseCounter: function () {
+            ++counter;
+            return counter;
+        },
+        decreaseCounter: function () {
+            --counter;
+            return counter;
+        }
+    }
+    return CounterOperation;
+}
+
+var Actions = Parent();
+console.log(Actions.increaseCounter());
+console.log(Actions.increaseCounter());
+console.log(Actions.increaseCounter());
+console.log(Actions.increaseCounter());
+////////////////////////////////////////////////////////////////////
+
+btn = document.querySelector(".btn");
+var c =0;
+// btn.addEventListener("click",function(e){
+//     e.preventDefault();
+//     c++;
+// })
+        function returnCount(){
+            function returnemps2(){
+                btn.addEventListener("click",function(e){
+                e.preventDefault();
+                document.body.style.backgroundColor = "lightblue";
+                c++;
+            })
+            return c;
+            }
+            return returnemps2;
+        }
+        var arrrCount = returnCount();
+///////////////////////////////////////////////////////////////
+function IntiatEmpData(firstObject) {
+    var NumberOfEmps = 0;
+    var EmpArray = arr;
+    EmpArray.push(firstObject);
+    return {
+        AddnewEmp: function (EmpObject) {
+            EmpArray.push(EmpObject);
+            ++NumberOfEmps;
+        },
+        NumberOfEMployees: function () {
+            console.log(firstObject);
+            return EmpArray.length;
+        }
+    }
+}
+
+var EmpOperations = IntiatEmpData({name: "Ahmed", salary: 10001,depart:"CS" });
+
+console.log(EmpOperations);
+console.log(EmpOperations.NumberOfEMployees());
+console.log(EmpOperations.AddnewEmp({name: "Ahmed", salary: 10001,depart:"CS" }));
+console.log(EmpOperations.NumberOfEMployees());
+
+///////////////////////////////////////////////////////////////////////////
+function returnems66(percent,arr){
+            function returnemps56(percent){
+                for(var i=0;i<arr.length;i++){
+                    arr[i].salary = arr[i].salary+arr[i].salary*percent;
+                }
+            }
+            return returnemps56;///
+        }
+        var arrreturn66 = returnems66();
+////////////////////////////////////////////////////////////////
+var depart3;
+function greetdepart(depart3){
+    function greetdepartinner(){
+        console.log("welcome to the "+depart3+" department");
+    }
+    return greetdepartinner;
+}
+var greetdepart5 = greetdepart(depart3);
+////////////////////////////////////////////////////////////
+function returnems55(arr){
+            function returnemps66(){
+                console.log(arr.length);
+            }
+            return returnemps66;
+        }
+        var arrreturn55 = returnems55(arr);
+/////////////////////////////////////////////////////////////
+function reduceSalary(arr){
+    for(var i=0;i<arr.length;i++){
+        arr[i].salary = arr[i].salary - arr[i].salary*0.1;
+    }
+}
+///////////////////////////////////////////////////////
+var data = arr.map(function(imp){
+    return imp.name;
+});
+console.log(data);
+/////////////////////////////////////////////////////////
+var high = arr.filter(function(imp){
+    if(imp.salary>4500){
+        return imp.name;
+    }
+})
+console.log(high);
+/////////////////////////////////////////////////////////
+var sum = arr.reduce(function(totl,imp){
+    return totl+imp.salary;
+},0)
+console.log(sum);
+/////////////////////////////////////////////////////
+function incrSalary(arr){
+    function increase(){
+        for(var i=0;i<arr.length;i++){
+            arr[i].salary = arr[i].salary*1.1;
+        }
+    }
+    return increase;
+}
+var increseResult = incrSalary(arr);
+/////////////////////////////////////////////////////////
+var newOne = {
+    name:"emp8",
+    salary:4600,
+    depart:"IT"
+}
+arr.push(newOne);
+//////////////////////////////////////////////////////////
+function filterDepart(arr,depart){
+    function innerDeapart(){
+        for(var i=0;i<arr.length;i++){
+            if(arr[i].depart==depart){
+                console.log(arr[i]);
+            }
+        }
+    }
+    return innerDeapart;
+}
+var departResult = filterDepart(arr,"CS");
+////////////////////////////////////////////////////////////
+    </script>
+</body>
+</html>

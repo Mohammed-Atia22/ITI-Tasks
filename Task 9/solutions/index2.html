@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+
+    <form action="">
+        Name : <input type="text" name="name" id="name" style="display: block; margin-bottom: 20px;">
+        Age : <input type="number" name="age" id="age" style="display: block; margin-bottom: 20px;">
+        Street : <input type="text" name="street" id="street" style="display: block; margin-bottom: 20px;">
+        City : <input type="text" name="city" id="city" style="display: block; margin-bottom: 20px;">
+        <input type="submit" value="submit" id="submit">
+    </form>
+    <script>
+        var user = {
+            name:"",
+            getname : function(name1){
+                if(typeof name1 == "string"){
+                    this.name = name1
+                }
+            },
+            getage : function(age1){
+                this.age = age1;
+            },
+            age:"",
+            address:{
+                street:"",
+                getstreet : function(street1){
+                    if(typeof street1 == "string"){
+                        this.street = street1
+                    }
+                },
+                city:"",
+                getcity : function(city1){
+                    if(typeof city1 == "string"){
+                        this.city = city1;
+                    }
+                },
+            },
+            getFullAddress:function(){
+                name = this.name;
+                age = this.age;
+                street = this.address.street;
+                city = this.address.city;
+                console.log(name+" "+age+" "+street+" "+city);
+            }
+        }
+        userarray = [];
+        name5 = document.querySelector("#name");
+        age5 = document.querySelector("#age");
+        street5 = document.querySelector("#street");
+        city5 = document.querySelector("#city");
+        submit5 = document.querySelector("#submit");
+
+        submit5.addEventListener("click",function(e){
+            e.preventDefault();
+            if(name5.value.length==0||age5.value<=0||street5.value.length==0||city5.value.length<=0){
+                alert("enter the data correctly")
+            }
+            if(name5.value.length > 5){
+                user.getname(name5.value);
+            }
+            else{
+                alert("name length must be more than 5 chars")
+            }
+            if(age5.value>0){
+                user.getage(age5.value.toString());
+            }else{
+                alert("your age must be more than zero")
+            }
+            if(street5.value.length > 5){
+                user.address.getstreet(street5.value);
+            }
+            else{
+                alert("street length must be more than 5 chars")
+            }
+            if(city5.value.length > 5){
+                user.address.getcity(city5.value);
+            }
+            else{
+                alert("city length must be more than 5 chars")
+            }
+            user.getFullAddress();
+            adduser({...user});
+            returnAllUser(userarray);
+        })
+
+        function adduser(user){
+            userarray.push(user);
+        }
+        // var c = 0;
+        // var idx = user;
+        // userarray[c]=idx;
+        // c++;
+
+        function returnAllUser(userarray){
+            for(var i=0;i<userarray.length;i++){
+                console.log(userarray[i]);
+            }
+        }
+        returnAllUser(userarray);
+
+
+        function removeUser(id,userarray){
+            for(var i=0;i<userarray.length;i++){
+                if(i==id){
+                    userarray.splice(1,id);
+                }
+            }
+        }
+        //removeUser(4,userarray);
+
+
+        function getUser(name,userarray){
+            for(var i=0;i<userarray.length;i++){
+                if(userarray[i].name==name){
+                    console.log(userarray[i]);
+                }
+            }
+        }
+        //getUser("Mohamed");
+
+
+        function sort(userarray){
+            userarray.sort(function(a,b){
+                return a.age - b.age;
+            })
+        }
+
+        // user.getname(name5.value);
+        // user.getage(age5.value);
+        // user.address.getstreet(street5.value);
+        // user.address.getcity(city5.value);
+        // user.getFullAddress();
+
+    
+    </script>
+</body>
+</html>

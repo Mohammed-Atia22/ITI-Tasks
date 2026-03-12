@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body style="background-color: lightgray;">
+    <h1>Move Elements Between Boxes</h1>
+    <div class="cont" style="margin-left: 30px;">
+        <div class="left" style="display: inline-block;background-color: white;width: 300px;height: 400px;margin-right: 30px;">
+            <div class="inner" style="text-align: center;">
+                <h1>Available</h1>
+                <p class="p1" style="padding: 10px;margin: 20px;background-color: lightgray;">HTML</p>
+                <P class="p2" style="padding: 10px;margin: 20px;background-color: lightgray;">CSS</P>
+                <P class="p3" style="padding: 10px;margin: 20px;background-color: lightgray;">JAVASCRIPT</P>
+                <P class="p4" style="padding: 10px;margin: 20px;background-color: lightgray;">REACT</P>
+            </div>
+        </div>
+        <div class="middle" style="display: inline-block;margin-right: 30px;">
+            <button class="move">MOVE</button>
+            <button class="back">BACK</button>
+        </div>
+        <div class="right" style="display: inline-block;background-color:white;width: 300px;text-align: center;">
+            <h1>SELECTED</h1>
+        </div>
+    </div>
+
+    <script>
+        p1 = document.querySelector(".p1");
+        p2 = document.querySelector(".p2");
+        p3 = document.querySelector(".p3");
+        p4 = document.querySelector(".p4");
+        var text;
+        var kind;
+        p1.addEventListener('click',function(e){
+            //console.log(p1.textContent);
+            text=p1.textContent;
+            kind="p1";
+            p1.style.cssText=`
+                color:white;
+                background-color:blue;
+                padding: 10px;
+                margin: 20px;
+                `
+        })
+        p2.addEventListener('click',function(e){
+            //console.log(p2.textContent);
+            text=p2.textContent;
+            kind="p2";
+            p2.style.cssText=`
+                color:white;
+                background-color:blue;
+                padding: 10px;
+                margin: 20px;
+                `
+        })
+        p3.addEventListener('click',function(e){
+            //console.log(p3.textContent);
+            text=p3.textContent;
+            kind="p3";
+            p3.style.cssText=`
+                color:white;
+                background-color:blue;
+                padding: 10px;
+                margin: 20px;
+                `
+        })
+        p4.addEventListener('click',function(e){
+            //console.log(p4.textContent);
+            text=p4.textContent;
+            kind="p4";
+            p4.style.cssText=`
+                color:white;
+                background-color:blue;
+                padding: 10px;
+                margin: 20px;
+                `
+        })
+        move = document.querySelector(".move");
+        back = document.querySelector(".back");
+        right = document.querySelector(".right");
+        move.addEventListener('click',function(e){
+            p=document.createElement("p")
+            p.innerText=text;
+            p.setAttribute("class",`a${kind}`)
+            p.style.cssText=`
+                color:black;
+                background-color:lightgray;
+                padding: 10px;
+                margin: 20px;
+                `
+            right.appendChild(p)
+            if(kind=="p1"){
+                p1.style.cssText=`display:none`
+                ap1 = document.querySelector(".ap1");
+            }
+            else if(kind=="p2"){
+                p2.style.cssText=`display:none`
+                ap2 = document.querySelector(".ap2");
+            }
+            else if(kind=="p3"){
+                p3.style.cssText=`display:none`
+                ap3 = document.querySelector(".ap3");
+            }
+            else if(kind=="p4"){
+                p4.style.cssText=`display:none`
+                ap4 = document.querySelector(".ap4");
+            }
+            // var text2;
+            ap1.addEventListener('click',function(e){
+            console.log(ap1.textContent);
+            // text2=ap1.textContent;
+            kind2="ap1";
+            ap1.style.cssText=`
+                color:white;
+                background-color:blue;
+                padding: 10px;
+                margin: 20px;
+                `
+            })
+            ap2.addEventListener('click',function(e){
+            console.log(ap2.textContent);
+            // text2=ap2.textContent;
+            kind2="ap2";
+            ap2.style.cssText=`
+                color:white;
+                background-color:blue;
+                padding: 10px;
+                margin: 20px;
+                `
+            })
+            ap3.addEventListener('click',function(e){
+            console.log(ap3.textContent);
+            // text2=ap3.textContent;
+            kind2="ap3";
+            ap3.style.cssText=`
+                color:white;
+                background-color:blue;
+                padding: 10px;
+                margin: 20px;
+                `
+            })
+            ap4.addEventListener('click',function(e){
+            console.log(ap4.textContent);
+            // text2=ap4.textContent;
+            kind2="ap4";
+            ap4.style.cssText=`
+                color:white;
+                background-color:blue;
+                padding: 10px;
+                margin: 20px;
+                `
+            })
+            
+        })
+        // ap1 = document.querySelector(".ap1");
+        // ap2 = document.querySelector(".ap2");
+        // ap3 = document.querySelector(".ap3");
+        // ap4 = document.querySelector(".ap4");
+        var kind2;
+        back.addEventListener('click',function(e){
+                if(kind2=="ap1"){
+                ap1.style.cssText=`display:none`
+                p1.style.cssText=`display:block`
+                p1.style.cssText=`
+                color:black;
+                background-color:lightgray;
+                padding: 10px;
+                margin: 20px;
+                `
+                console.log("clicked")
+            }
+            else if(kind2=="ap2"){
+                ap2.style.cssText=`display:none`
+                p2.style.cssText=`display:block`
+                p2.style.cssText=`
+                color:black;
+                background-color:lightgray;
+                padding: 10px;
+                margin: 20px;
+                `
+            }
+            else if(kind2=="ap3"){
+                ap3.style.cssText=`display:none`
+                p3.style.cssText=`display:block`
+                p3.style.cssText=`
+                color:black;
+                background-color:lightgray;
+                padding: 10px;
+                margin: 20px;
+                `
+            }
+            else if(kind2=="ap4"){
+                ap4.style.cssText=`display:none`
+                p4.style.cssText=`display:block`
+                p4.style.cssText=`
+                color:black;
+                background-color:lightgray;
+                padding: 10px;
+                margin: 20px;
+                `
+            }
+            })
+        
+    </script>
+</body>
+</html>

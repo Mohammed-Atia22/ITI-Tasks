@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+    <h1>MY CSS Live Docs</h1>
+    <p>CSS Snippets</p>
+    <div class="cont1" style="background-color: black;">
+        <div class="top1">
+            <p style="display: inline-block;color: white;">Center Context(Flex)</p>
+            <input style="display: inline-block;margin-left: 800px;" class="butt1" type="button" value="Copy">
+        </div>
+        <div class="bottom1">
+            <pre style="color: green;" class="pre1">
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+            </pre>
+        </div>
+    </div>
+    <div class="cont2" style="background-color: black;">
+        <div class="top2">
+            <p style="display: inline-block;color: white;">Center Context(Flex)</p>
+            <input style="display: inline-block;margin-left: 800px;" class="butt2" type="button" value="Copy">
+        </div>
+        <div class="bottom2">
+            <p style="color: green;" class="pre2">
+                    background-color:red;
+            </p>
+        </div>
+    </div>
+    <div class="cont3" style="background-color: black;">
+        <div class="top3">
+            <p style="display: inline-block;color: white;">Center Context(Flex)</p>
+            <input style="display: inline-block;margin-left: 800px;" class="butt3" type="button" value="Copy">
+        </div>
+        <div class="bottom3">
+            <pre style="color: green;" class="pre3">
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+            </pre>
+        </div>
+    </div>
+    <h1>paste your css here</h1>
+    <textarea name="" id="" class="textarea" style="width: 600px; height: 200px;"></textarea>
+    <div class="last">
+        <div class="box">
+            <p class="pee">i am the code</p>
+        </div>
+    </div>
+    <script>
+        textarea = document.querySelector(".textarea");
+        textarea.textContent="";
+        txt1 = document.querySelector(".pre1");
+        butt1 = document.querySelector(".butt1");
+        top1 = document.querySelector(".top1");
+        butt1.onclick = copyfunction;
+
+        function copyfunction(){
+            navigator.clipboard.writeText(txt1.textContent);
+            textarea.value=txt1.textContent;
+            // cccc = navigator.clipboard.writeText(txt1.textContent);
+            // textarea.textContent = cccc;
+            //console.log(txt1.textContent);
+            butt1.style.cssText=`
+            display: inline-block;
+            margin-left: 800px;
+        color:white;
+        background-color:blue;
+        
+    `
+        }
+//         butt.addEventListener('click',function(e){
+        
+//     this.innerHTML=`<h1 align="center">iti</h1>`;
+        
+
+//   }
+//)
+    </script>
+    <script>
+        txt2 = document.querySelector(".pre2");
+        butt2 = document.querySelector(".butt2");
+        top2 = document.querySelector(".top2");
+        butt2.onclick = copyfunction;
+        function copyfunction(){
+            navigator.clipboard.writeText(txt2.textContent);
+            textarea.value=txt2.textContent;
+            // cccc = navigator.clipboard.writeText(txt2.textContent);
+            // textarea.textContent = cccc;
+            //console.log(txt2.textContent);
+            butt2.style.cssText=`
+            display: inline-block;
+            margin-left: 800px;
+        color:white;
+        background-color:blue;
+        
+    `
+        }
+//         butt.addEventListener('click',function(e){
+        
+//     this.innerHTML=`<h1 align="center">iti</h1>`;
+        
+
+//   }
+//)
+    </script>
+    <script>
+        txt3 = document.querySelector(".pre3");
+        butt3 = document.querySelector(".butt3");
+        top3 = document.querySelector(".top3");
+        butt3.onclick = copyfunction;
+        function copyfunction(){
+            navigator.clipboard.writeText(txt3.textContent);
+            textarea.value=txt3.textContent;
+        //    cccc = navigator.clipboard.writeText(txt3.textContent);
+        //     textarea.textContent = cccc;
+
+            //console.log(txt3.textContent);
+            butt3.style.cssText=`
+            display: inline-block;
+            margin-left: 800px;
+        color:white;
+        background-color:blue;
+        
+    `
+        }
+//         butt.addEventListener('click',function(e){
+        
+//     this.innerHTML=`<h1 align="center">iti</h1>`;
+        
+
+//   }
+//)
+        last = document.querySelector(".last");
+        box = document.querySelector(".box");
+        pee = document.querySelector(".pee");
+        textarea.addEventListener('mouseout',function(e){
+        //textarea.textContent = navigator.clipboard.writeText(txt1.textContent);
+            //last.setAttribute("align","center");
+            //last.style.cssText = `${textarea.textContent}`
+            console.log(textarea.value)
+            pee.setAttribute("style",textarea.value);
+
+}) //mouseout
+// code=textarea.value;
+//  pee.style.cssText=code;
+// box.style.cssText=code;
+
+
+
+
+    </script>
+</body>
+</html>
